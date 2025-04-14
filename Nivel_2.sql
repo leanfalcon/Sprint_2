@@ -27,6 +27,6 @@ WHERE company_id IN (
 	FROM company
 	WHERE country = (
 		SELECT country 
-        FROM company 
-        WHERE company_name = 'Non Institute')
+        	FROM company 
+        	WHERE company_name = 'Non Institute')
         );
