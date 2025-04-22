@@ -1,6 +1,7 @@
 -- Script para Identifica los cinco días que se generó la mayor cantidad de ingresos en la empresa por ventas
 SELECT DATE(timestamp) as Fecha, SUM(amount) as Total_ventas
-FROM transaction
+FROM transaction 
+WHERE declined = '0'
 GROUP BY DATE(timestamp)
 ORDER BY Total_ventas DESC
 LIMIT 5;
