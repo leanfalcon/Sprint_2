@@ -16,8 +16,8 @@ HAVING Numero_transacciones > 4;
 -- Script para Identifica las empresas que tienen más de 4 transacciones o menos
 SELECT company_name, COUNT(transaction.company_id) as Numero_transacciones, 
 CASE
-	WHEN  COUNT(transaction.company_id) > 4 THEN 'Más de 4 transacciones'
-    ELSE '4 o menos transacciones'
+	WHEN  COUNT(transaction.company_id) >= 4 THEN 'Más de 4 transacciones'
+    ELSE 'menos de 4 transacciones'
 END AS Cantidad_Transacciones
 FROM company 
 LEFT JOIN transaction ON company.id = transaction.company_id
